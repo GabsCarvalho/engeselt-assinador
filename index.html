@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>ePonto Assinado</title>
+<link rel="icon" href="LOGO.png" type="image/x-icon">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <img class="logo" src="LOGO.png" alt="Engeselt">
+    <div class="Texto">
+      <h1>Assinador Automático de Folha de Ponto</h1>
+    </div>
+  </header>
+
+  <main class="controls" role="main">
+    <section class="left">
+      <label>1) Carregar imagem da assinatura (PNG/JPG)</label>
+      <input id="sigFile" type="file" accept="image/*">
+
+      <div id="previewBox">
+        <div class="preview-header">
+          <div class="preview-label">Pré-visualização (removendo fundo)</div>
+          <div class="preview-format">Formato: <span id="sigFmt">-</span></div>
+        </div>
+        <canvas id="sigPreviewCanvas" width="420" height="120"></canvas>
+        <div class="sliderRow">
+          <div class="tolerance-label">Tolerância</div>
+          <input id="tolerance" type="range" min="0" max="255" value="220">
+          <div id="tolVal">220</div>
+        </div>
+        <div class="button-group">
+          <button id="applyRemove" class="small">🧹 Remover Fundo (preview)</button>
+          <button id="restoreBg" class="small secondary">↺ Restaurar original</button>
+          <button id="saveCoords" class="small secondary">💾 Salvar coordenadas</button>
+        </div>
+      </div>
+
+      <label class="label-mt-12">2) Carregar PDFs (múltiplos)</label>
+      <input id="pdfFiles" type="file" accept="application/pdf" multiple>
+
+      <div class="button-group-mt-10">
+        <button id="openEditor" class="small">✏️ Abrir Editor (PDF referência)</button>
+        <button id="applyAll" class="small" disabled>📦 Aplicar em todos e baixar ZIP</button>
+      </div>
+
+      <div class="dicas-text">Dicas: arraste a assinatura no canvas; use scroll ou botões + / − para ajustar; use ← → para rotacionar.</div>
+    </section>
+
+    <section>
+      <div class="editor">
+        <div class="toolbar">
+          <div class="toolbar-group">
+            <div class="btn-ico" id="zoomOut">−</div>
+            <div class="btn-ico" id="zoomIn">+</div>
+            <div class="btn-ico" id="rotLeft">⟲</div>
+            <div class="btn-ico" id="rotRight">⟳</div>
+            <div class="rotation-display">Rot: <span id="rotDeg">0</span>°</div>
+          </div>
+          <div class="toolbar-group">
+            <div class="coords">X:<span id="coordX">-</span></div>
+            <div class="coords">Y:<span id="coordY">-</span></div>
+            <div class="coords">W:<span id="coordW">-</span></div>
+            <div class="coords">H:<span id="coordH">-</span></div>
+          </div>
+        </div>
+
+        <canvas id="pdfCanvas"></canvas>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span id="status">Aguardando arquivos...</span>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.16.105/build/pdf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
+
+<script src="script.js"></script>
+</body>
+</html>

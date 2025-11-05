@@ -1,0 +1,235 @@
+:root{
+
+    --bg:#0b1220;
+    --panel:#111827;
+    --muted:#9ca3af;
+    --accent:#45617d;
+    --white:#ffffff;
+}
+
+body{
+    margin:0;
+    font-family:Inter, Arial, sans-serif;
+    background:var(--bg);
+    color:var(--white);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:28px;
+}
+
+header{
+    display:flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1100px;
+    align-items:center;
+    margin-bottom: 15px;
+}
+
+.logo{
+    height:64px
+}
+
+h1{
+    color: #e2ab03;
+    margin:6px 0 2px;
+    font-size:28px
+}
+
+.controls{
+    background:var(--panel);
+    padding:18px;
+    border-radius:12px;
+    box-shadow:0 6px 30px rgba(2,6,23,.6);
+    width:100%;
+    max-width:1100px;
+    display:grid;
+    grid-template-columns:320px 1fr;
+    gap:18px
+}
+
+.left{
+    display:flex;
+    flex-direction:column;
+    gap:10px
+}
+
+label{
+    font-size:13px;
+    color:var(--muted)
+}
+
+input[type=file]{
+    background:#0f1724;
+    padding:8px;
+    border-radius:8px;
+    color:var(--white);
+    border:1px solid #1f2937
+}
+
+button{
+    background:var(--accent);
+    border:none;
+    color:white;
+    padding:10px;
+    border-radius:8px;
+    font-weight:600;
+    cursor:pointer
+}
+
+button.secondary{
+    background:#374151
+}
+
+.small{
+    padding:8px 10px;
+    font-size:14px
+}
+
+#previewBox{
+    background:#081122;
+    border-radius:8px;
+    padding:10px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    align-items:center
+}
+
+#sigPreviewCanvas{
+    background:#fff;
+    border-radius:6px;
+    max-width:100%;
+    height:80px
+}
+
+.sliderRow{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    width:100%; /* Adicionado */
+}
+
+input[type=range]{
+    width:100%
+}
+
+.editor{
+    background:#081022;
+    padding:10px;
+    border-radius:8px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    align-items:center
+}
+
+#pdfCanvas{
+    border:3px solid #e2ab03;
+    border-radius:8px;
+    background:#fff;
+    max-width:100%;
+    display:none; /* Adicionado */
+}
+
+.toolbar{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    align-items:center;
+    width:100%; /* Adicionado */
+    justify-content:space-between; /* Adicionado */
+}
+
+.coords{
+    font-size:12px;
+    color:var(--muted)
+}
+
+footer{
+    margin-top:16px;
+    color:var(--muted);
+    font-size:13px
+}
+
+.row{
+    display:flex;
+    gap:8px
+}
+
+.btn-ico{
+    width:40px;
+    height:40px;
+    border-radius:8px;
+    display:inline-grid;
+    place-items:center;
+    background:#0b1228;
+    border:1px solid #1f2937;
+    cursor:pointer
+}
+
+/* --- Estilos extraídos do HTML --- */
+
+.preview-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.preview-label {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.preview-format {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.tolerance-label {
+    width: 110px;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+#tolVal {
+    width: 38px;
+    text-align: right;
+    color: var(--muted);
+}
+
+.button-group {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+}
+
+.label-mt-12 {
+    margin-top: 12px;
+}
+
+.button-group-mt-10 {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.dicas-text {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.toolbar-group {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.rotation-display {
+    font-size: 13px;
+    color: var(--muted);
+    margin-left: 8px;
+}
